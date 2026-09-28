@@ -1,0 +1,24 @@
+version: 2
+
+models:
+  - name: fact_trips
+    columns:
+      - name: trip_id
+        tests:
+          - unique                 # every trip must have a different ID
+          - not_null               # no trip can be missing an ID
+
+      - name: start_time
+        tests:
+          - not_null               # every trip must have a start time
+
+      - name: duration_minutes
+        tests:
+          - not_null               # every trip must have a duration
+
+      - name: start_station_id
+        tests:
+          - relationships:
+              to: ref('dim_station')     # must link to a real station
+              field: station_id
+              severity: warn           # warn, don't fail (old stations may be missing)

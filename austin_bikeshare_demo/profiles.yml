@@ -1,0 +1,13 @@
+austin_bikeshare_demo:
+  outputs:
+    dev:
+      dataset: austin_bikeshare_dev
+      job_execution_timeout_seconds: 300
+      job_retries: 1
+      location: US
+      method: oauth
+      priority: interactive
+      project: augmented-slice-482513-g2
+      threads: 4
+      type: bigquery
+  target: dev
