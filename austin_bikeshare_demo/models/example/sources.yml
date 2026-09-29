@@ -1,9 +1,0 @@
-version: 2
-
-sources:
-  - name: austin_bikeshare
-    database: bigquery-public-data   # the Google project
-    schema: austin_bikeshare        # the dataset name
-    tables:
-      - name: bikeshare_trips
-      - name: bikeshare_stations
